@@ -2,6 +2,7 @@ import LocalAuthentication
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var statusMessage = "Tap Authenticate to test Face ID / Touch ID / passcode."
     @State private var isUnlocked = false
 
@@ -46,6 +47,11 @@ struct ContentView: View {
             .padding(.top, 24)
             .navigationTitle("LocalAuthentication")
         }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .background {
+                lockSessionForBackground()
+            }
+        }
     }
 
     private func authenticate() {
@@ -69,6 +75,11 @@ struct ContentView: View {
                 }
             }
         }
+    }
+
+    private func lockSessionForBackground() {
+        isUnlocked = false
+        statusMessage = "Session locked in background. Authenticate again to continue."
     }
 }
 
