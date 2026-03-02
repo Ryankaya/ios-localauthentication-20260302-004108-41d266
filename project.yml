@@ -1,0 +1,21 @@
+name: ios-localauthentication-20260302-004108-41d266
+options:
+  deploymentTarget:
+    iOS: "17.0"
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.ryankaya.ios-localauthentication-20260302-004108-41d266
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  ios-localauthentication-20260302-004108-41d266:
+    type: application
+    platform: iOS
+    sources:
+      - Sources
+    settings:
+      base:
+        INFOPLIST_FILE: Sources/Info.plist
+        IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    scheme:
+      testTargets: []

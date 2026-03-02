@@ -1,0 +1,1 @@
+/Users/halilturankaya/Downloads/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a
